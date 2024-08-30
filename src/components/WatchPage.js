@@ -34,7 +34,7 @@ const WatchPage = () => {
           }
           catch(error)
           {
-            console.log('I am in catch', error.message);
+            console.log('I am in catch of watchPage', error.message);
           }
     }
 
@@ -46,10 +46,10 @@ const WatchPage = () => {
 
  
 
-  if(comments == null )
-  {
-    return ( <h1 className='m-[200px]'>Not now!!!</h1>)
-  }
+  // if(!comments)
+  // {
+  //   return ( <h1 className='m-[200px]'>Not now!!!</h1>)
+  // }
   
 
   return (
@@ -61,7 +61,7 @@ const WatchPage = () => {
   {/* I-FRAME */}
   <div className='relative overflow-hidden pb-[56.25%] h-0'>
   <iframe 
-    className='absolute top-0 left-0  w-full h-full min-w-[300px]
+    className='absolute top-0 left-0  w-full h-full min-w-[500px]
     min-h-[200px] rounded-lg' 
     src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
     title="YouTube video player" 
@@ -74,16 +74,16 @@ const WatchPage = () => {
   <div className='mt-8 px-4 py-2 bg-gray-100 border rounded-lg'>
     <h1 className='my-4 text-xl font-bold'>Comments:</h1>
     
-    {comments.length > 0 ? (
+    {comments != null ? (
       comments.map((obj) => (
         <Comments key={obj.id} item={obj} />
       ))
-    ) : (null)}
+    ) : (<h1>comments not available</h1>)}
   </div>
 </section>
 
 {/* SUGGESTION */}
-<div style={{ maxHeight: 'calc(100vh - 70px)' }} className='border-2 w-full flex-grow min-w-[300px]'>
+<div style={{ maxHeight: 'calc(100vh - 70px)' }} className='border-2 w-full flex-grow min-w-[300px] max-w-[400px]'>
   <LiveChat />
 </div>
 
