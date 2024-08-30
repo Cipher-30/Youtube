@@ -10,6 +10,9 @@ const VideoList = () => {
  
   const {videos} = useContext(UserContext);
 
+  // console.log( "hereeeee",videos);
+  
+
   const dispatch = useDispatch();
 
   const closeBar = () =>

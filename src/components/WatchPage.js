@@ -9,7 +9,10 @@ const WatchPage = () => {
 
 
  
-  const {Wid} = useParams(); //GETTING WATCH-ID, RETURNS OBJ.
+  const {id} = useParams(); //GETTING WATCH-ID, RETURNS OBJ.
+
+  console.log("watch id",id);
+  
 
   const[comments, setComments] = useState(null);
 
@@ -18,7 +21,7 @@ const WatchPage = () => {
   const fetchData = async () =>
     {
           try{
-              const data = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${Wid}&key=AIzaSyCxmBwoDaS7JkxCdPxUAFAdvjBkPbP2mZw`);
+              const data = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${id}&key=AIzaSyCxmBwoDaS7JkxCdPxUAFAdvjBkPbP2mZw`);
               if(!data.ok)
               {
                 throw new Error("something went wrong during fetching", )
@@ -39,7 +42,7 @@ const WatchPage = () => {
     useEffect( () =>
     {
       fetchData();
-    },[Wid]);
+    },[id]);
 
  
 
@@ -60,9 +63,8 @@ const WatchPage = () => {
   <iframe 
     className='absolute top-0 left-0  w-full h-full min-w-[300px]
     min-h-[200px] rounded-lg' 
-    src={`https://www.youtube.com/embed/${Wid}?autoplay=1`} 
+    src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
     title="YouTube video player" 
-    frameBorder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
     allowFullScreen
   ></iframe>

@@ -1,7 +1,7 @@
 // PUT AUTH IN PRIVATE FILE 
-const authKey = "AIzaSyCxmBwoDaS7JkxCdPxUAFAdvjBkPbP2mZw";
+// const authKey = "AIzaSyCxmBwoDaS7JkxCdPxUAFAdvjBkPbP2mZw";
 
-export const youtubeApi =  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key="+authKey;
+export const youtubeApi =  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key=AIzaSyCxmBwoDaS7JkxCdPxUAFAdvjBkPbP2mZw";
 
 export const suggestionApi = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
