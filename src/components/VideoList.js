@@ -27,9 +27,9 @@ const VideoList = () => {
     {
       videos.map((obj) => {
         return (
-          <div className='border rounded-lg shadow-lg  overflow-hidden cursor-pointer group ' key={obj.id}    >
+          <div onClick={() => closeBar() } className='border rounded-lg shadow-lg  overflow-hidden cursor-pointer group ' key={obj.id}    >
             
-            <Link onClick={() => closeBar() } to={"/watchId/"+ obj?.id}>
+            <Link to={"/watchId/"+ obj?.id}>
             
             <div  className='w-full rounded-lg overflow-hidden '>
               <img className='w-full object-cover rounded-lg group-hover:scale-105 transition-all duration-100 ease-in-out' src={obj?.snippet?.thumbnails?.high?.url} alt='Thumbnail' />
